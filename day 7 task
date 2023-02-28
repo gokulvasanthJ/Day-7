@@ -1,0 +1,11 @@
+var request = new XMLHttpRequest();
+        request.open('Get','https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json', true);request.send();request.onload = function () {
+             let data = JSON.parse(this.response);
+             let currencies=[];
+             for(i=0; i<data.length; i++){
+                 if(data[i].currencies[0].code=="USD")
+                 {
+                  console.log("name:",data[i].name,"currencie",data[i].currencies[0].code)
+                 }
+             }
+     }
